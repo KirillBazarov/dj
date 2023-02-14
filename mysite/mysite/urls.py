@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.sitemaps.views import sitemap
@@ -14,3 +15,11 @@ urlpatterns = [
     path('feed/atom', LatestPostsFeedAtom(), name='latest_posts_feed'),
     path("feed/rss", LatestPostsFeed(), name="post_feed"),
 ]
+
+
+if settings.DEBUG:
+    import debug_toolbar
+
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns
