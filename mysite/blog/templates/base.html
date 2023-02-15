@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous" />
+    {% block css_aditional %} {% endblock%}
     </head>
 
     <body>
@@ -52,7 +53,7 @@
                             <a class="nav-link text-black font-weight-bold" href="#">Policy</a>
                         </li>
                         <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="#">Contact</a>
+                            <a class="nav-link text-black font-weight-bold" href="{% url 'register' %}">Registration</a>
                         </li>
                     </ul>
                 </div>
