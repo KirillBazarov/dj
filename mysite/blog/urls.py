@@ -9,7 +9,7 @@ urlpatterns = [
     path('',views.PostList.as_view(), name='home'),
     path('login/', views.LoginUser.as_view(), name='login'),
     path('logout/', logout_user, name='logout'),
-    # path('feedback/', views.Feedback.as_view(), name='feedback'),
+    path('feedback/', views.ContactFormView.as_view(), name='feedback'),
     path('register/', views.RegisterUser.as_view(), name='register'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
 

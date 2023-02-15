@@ -14,6 +14,7 @@ urlpatterns = [
     path("xsitemap.xml", sitemap, {"sitemaps": sitemaps}, name="sitemap"),
     path('feed/atom', LatestPostsFeedAtom(), name='latest_posts_feed'),
     path("feed/rss", LatestPostsFeed(), name="post_feed"),
+    path('captcha/', include('captcha.urls')),
 ]
 
 

@@ -4,9 +4,9 @@ from django.contrib.auth.views import LoginView
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views import generic
-from django.views.generic import CreateView
+from django.views.generic import CreateView, FormView
 
-from .forms import RegisterUserForm, LoginUserForm
+from .forms import RegisterUserForm, LoginUserForm, ContactForm
 from .models import Post
 
 
@@ -43,3 +43,13 @@ class LoginUser(LoginView):
 def logout_user(request):
     logout(request)
     return redirect('home')
+
+
+class ContactFormView(FormView):
+    form_class = ContactForm
+    template_name = 'contact.html'
+    success_url = reverse_lazy('home')
+
+    def form_valid(self, form):
+        print(form.cleaned_data)
+        return redirect('home')

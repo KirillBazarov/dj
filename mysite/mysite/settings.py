@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
     'debug_toolbar',
+    'captcha',
     'blog',
 ]
 
