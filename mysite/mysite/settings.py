@@ -149,3 +149,5 @@ CACHES = {
         'LOCATION': os.path.join(BASE_DIR, 'coolsite_cache'),
     }
 }
+
+LOGIN_REDIRECT_URL = '/'
